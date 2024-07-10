@@ -2,14 +2,6 @@
   <data>
 
     <!-- actions opening views on models -->
-
-    <record model="ir.actions.act_window" id="hospital_action_window">
-      <field name="name">hospital main window</field>
-      <field name="res_model">res.partner</field>
-      <field name="view_mode">tree,form</field>
-      <field name="context"> {'default_isPatient': True}</field>
-      <field name="domain"> [('isPatient', '=', true)] </field>
-    </record>
     <record model="ir.actions.act_window" id="guarantor_request_action_window">
       <field name="name">Guarantor Request</field>
       <field name="res_model">guarantor.request</field>
