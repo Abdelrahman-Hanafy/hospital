@@ -38,6 +38,20 @@ class guarantorRequest(models.Model):
     date = fields.Date(string="Date", default=fields.Date.today())
     state = fields.Selection([('draft', 'Draft'), ('sent', 'Sent') ,('accepted', 'Accepted'), ('rejected', 'Rejected')], string="State", default="draft")
 
+
+    ## actions ##
+    def action_sent(self):
+        self.state = 'sent'
+
+    def action_accepted(self):
+        self.state = 'accepted'
+
+    def action_rejected(self):
+        self.state = 'rejected'
+
+    def action_draft(self):
+        self.state = 'draft'
+
     @api.model
     def create(self, vals):
         if vals.get('name', 'New') == 'New':
