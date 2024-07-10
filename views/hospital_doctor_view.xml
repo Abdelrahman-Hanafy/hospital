@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    
+    <!-- Custom form view -->
+
+    <record id="hospital_doctor_form" model="ir.ui.view">
+        <field name="name">hospital_doctor_form</field>
+        <field name="model">res.users</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="login"/>
+                </group>
+                <group>
+                    <field name="employee_department_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="doctor_action_window">
+        <field name="name">doctor main window</field>
+        <field name="res_model">res.users</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context"> {'default_isDoctor': True, 'default_create_employee': True}</field>
+        <field name="domain"> [('isDoctor', '=', true)] </field>
+    </record>
+</odoo>

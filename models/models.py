@@ -8,6 +8,14 @@ class patient(models.Model):
     isPatient = fields.Boolean(string="Is Patient")
     patient_type = fields.Selection([('inpatient', 'Inpatient'), ('outpatient', 'Outpatient'), ('reserve', 'Reserve')], string="Patient Type")
 
+class doctor(models.Model):
+    _inherit = 'res.users'
+
+    isDoctor = fields.Boolean(string="Is Doctor")
+    type = fields.Selection([('duty', 'Duty'), ('admission', 'Admission'), ('ER', 'Emergency'), ('consultation', 'Consultation')], string="Type")
+
+    employee_department_id = fields.Many2one(related="create_employee_id.department_id", string="Department")
+
 class guarantorRequest(models.Model):
     _name = 'guarantor.request'
     _description = 'Guarantor Request'
