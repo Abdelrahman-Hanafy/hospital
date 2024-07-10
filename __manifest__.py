@@ -27,7 +27,10 @@ Long description of module's purpose
 
         'data/seq.xml',
 
+        'views/hospital_doctor_view.xml',
         'views/views.xml',
+
+        'views/hospital_menu.xml',
     ],
 
     'application': True
