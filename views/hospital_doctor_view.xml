@@ -38,6 +38,21 @@
         </field>
     </record>
 
+    <!-- Make search by department possible -->
+    <record model="ir.ui.view" id="hospital_doctor_search">
+        <field name="name">hospital_doctor_search</field>
+        <field name="model">res.users</field>
+        <field name="arch" type="xml">
+            <search>
+                
+                <field name="name"/>
+                <field name="employee_department_id"/>
+
+            </search>
+        </field>
+
+    </record>
+
     <record model="ir.actions.act_window" id="doctor_action_window">
         <field name="name">doctor main window</field>
         <field name="res_model">res.users</field>
