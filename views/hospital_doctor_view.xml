@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <odoo>
-    
-    <!-- Availablity from views -->
-
-    <record id="hospital_doctor_availability_form" model="ir.ui.view">
-        <field name="name">Doctor Availability Form</field>
-        <field name="model">doctor.availability</field>
-        <field name="arch" type="xml">
-            <form>
-                
-                <group>
-                    <field name="name"/>
-                    <field name="doctor_id"/>
-                </group>
-                
-                <group>
-                    <field name="weekday"/>
-                </group>
-                <group class="d-flex  p-2 mb-3 justify-content-around">
-                    <field name="start_time" widget="float_time"/>
-                    <field name="end_time" widget="float_time"/>
-                    <field name="duration"/>
-                </group>
-                        
-            </form>
-        </field>
-    </record>
 
     <!-- Custom form view -->
 

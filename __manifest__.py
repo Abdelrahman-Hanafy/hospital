@@ -31,6 +31,7 @@ Long description of module's purpose
         'views/hospital_patient_view.xml',
         'views/hospital_request_view.xml',
         'views/hospital_patient_visit_view.xml',
+        'views/hospital_doctor_availablility_view.xml',
 
         'views/hospital_menu.xml',
     ],

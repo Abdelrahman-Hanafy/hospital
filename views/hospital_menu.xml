@@ -9,6 +9,7 @@
     <menuitem name="Reception" id="hospital_reception_menu" parent="hospital.menu_root" sequence='10'/>
     <menuitem name="Patient" id="hospital_patient_menu" parent="hospital.hospital_reception_menu" action="patient_action_window"/>
     <menuitem name="Visit" id="hospital_visit_menu" parent="hospital.hospital_reception_menu" action="patient_visit_action_window"/>
+    <menuitem name="Availability" id="hospital_Availability_menu" parent="hospital.hospital_reception_menu" action="hospital_doctor_availability_action"/>
     
     <menuitem name="Administration" id="hospital_administration_menu" parent="hospital.menu_root" sequence='20'/>
     <menuitem name="Doctor" id="hospital_doctor_menu" parent="hospital.hospital_administration_menu" action="doctor_action_window"/>

@@ -23,10 +23,15 @@ class doctor(models.Model):
     
 class doctorAvailability(models.Model):
     _name = 'doctor.availability'
+    _order = 'start_time'
 
     name = fields.Char(string="Name", compute="_compute_name", store=True)
     doctor_id = fields.Many2one(comodel_name="res.users", string="Doctor")
-    weekday = fields.Selection([('mon', 'Monday'), ('tue', 'Tuesday'), ('wed', 'Wednesday'), ('thu', 'Thursday'), ('fri', 'Friday'), ('sat', 'Saturday'), ('sun', 'Sunday')], string="Day")
+    department_id = fields.Many2one("hr.department", string="Department", related= "doctor_id.employee_department_id", store=True)
+
+    weekday = fields.Selection([('0', 'Monday'), ('1', 'Tuesday'), 
+                                ('2', 'Wednesday'), ('3', 'Thursday'), 
+                                ('4', 'Friday'), ('5', 'Saturday'), ('6', 'Sunday')], string="Day")
     start_time = fields.Float(string="Start Time")
     end_time = fields.Float(string="End Time")
     duration = fields.Float(string="Duration", compute="_compute_duration", inverse="_inverse_duration" ,store=True)

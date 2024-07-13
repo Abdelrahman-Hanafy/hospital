@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <!-- Availablity from views -->
+
+    <record id="hospital_doctor_availability_form" model="ir.ui.view">
+        <field name="name">Doctor Availability Form</field>
+        <field name="model">doctor.availability</field>
+        <field name="arch" type="xml">
+            <form>
+                
+                <group>
+                    <field name="name"/>
+                    <field name="doctor_id"/>
+                </group>
+                
+                <group>
+                    <field name="weekday"/>
+                </group>
+                <group class="d-flex  p-2 mb-3 justify-content-around">
+                    <field name="start_time" widget="float_time"/>
+                    <field name="end_time" widget="float_time"/>
+                    <field name="duration"/>
+                </group>
+                        
+            </form>
+        </field>
+    </record>
+
+    <!-- Availablity tree views -->
+
+    <record id="hospital_doctor_availability_tree" model="ir.ui.view">
+        <field name="name">Doctor Availability Tree</field>
+        <field name="model">doctor.availability</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="doctor_id"/>
+                <field name="weekday"/>
+                <field name="start_time"/>
+                <field name="end_time"/>
+                <field name="duration"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Availablity search view -->
+
+    <record id="hospital_doctor_availability_search" model="ir.ui.view">
+        <field name="name">Doctor Availability Search</field>
+        <field name="model">doctor.availability</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="doctor_id"/>
+                <field name="department_id"/>
+                <field name="weekday"/>
+                <field name="start_time"/>
+
+                <filter name="group_by_department" string="Group By department" context="{'group_by': 'department_id'}" />
+                <filter name="group_by_weekday" string="Group By weekday" context="{'group_by': 'weekday'}" />
+            </search>
+        </field>
+    </record>
+
+    <!-- avai action -->
+
+    <record id="hospital_doctor_availability_action" model="ir.actions.act_window">
+        <field name="name">Doctor Availability</field>
+        <field name="res_model">doctor.availability</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{
+            "search_default_group_by_department": 1,
+            "search_default_group_by_weekday": 1,
+        }</field>
+    </record>
+</odoo>
