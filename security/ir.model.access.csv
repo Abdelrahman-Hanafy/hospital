@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_guarantor_request,guarantor.request,model_guarantor_request,base.group_user,1,1,1,1
 access_hospital_patient_visit,hospital.patient.visit,model_hospital_patient_visit,base.group_user,1,1,1,1
+access_doctor_availability,doctor.availability,model_doctor_availability,base.group_user,1,1,1,1
