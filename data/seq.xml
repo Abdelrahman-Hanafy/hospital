@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <odoo>
-    <data noupdate="1">
         <record id="seq_request" model="ir.sequence">
             <field name="name">Guarantor Request</field>
             <field name="code">guarantor.request</field>
@@ -10,5 +9,12 @@
             <field name="company_id" eval="False"/>
     
         </record>
-    </data>
+        <record id="seq_visit" model="ir.sequence">
+            <field name="name">Patient Visit</field>
+            <field name="code">patient.visit</field>
+            <field name="prefix">PV</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+    
+        </record>
 </odoo>

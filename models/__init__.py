@@ -3,3 +3,4 @@
 from . import doctor
 from . import patient
 from . import guarantor_request
+from . import patient_visit

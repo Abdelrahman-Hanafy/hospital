@@ -17,6 +17,11 @@
                     <field name="type"/>
                     <field name="employee_department_id"/>
                 </group>
+                <notebook>
+                    <page string="Visit Info">
+                        <field name="visit_ids"/>
+                    </page>
+                </notebook>
             </form>
         </field>
     </record>

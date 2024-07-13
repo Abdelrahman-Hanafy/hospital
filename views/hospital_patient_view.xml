@@ -12,14 +12,11 @@
                 </group>
                 <group>
                     <field name="hasGuarantor"/>
-                    <field name="patient_type"/>
                 </group>
 
                 <notebook>
                     <page string="Visit Info">
-                        <group>
-                            <field name="doctor_id"/>
-                        </group>
+                        <field name="visit_ids"/>
                     </page>
                     <page string="Requests Info" invisible="not hasGuarantor">
                         <field name="guarantor_request_ids">
@@ -41,7 +38,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="patient_type"/>
+                <field name="hasGuarantor"/>
             </tree>
         </field>
     </record>

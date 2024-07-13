@@ -7,7 +7,10 @@ class doctor(models.Model):
     type = fields.Selection([('duty', 'Duty'), ('admission', 'Admission'), ('ER', 'Emergency'), ('consultation', 'Consultation')], string="Type")
 
     create_employee_id = fields.Many2one(related="employee_id", string="Employee", store=True)
-    employee_department_id = fields.Many2one(related="create_employee_id.department_id", string="Department", readonly=False)
+    employee_department_id = fields.Many2one(related="create_employee_id.department_id", string="Department", readonly=False, store=True)
+
+    visit_ids = fields.One2many(comodel_name="hospital.patient.visit", inverse_name="doctor_id", string="Visits")
+
 
     @api.model
     def create(self, vals):

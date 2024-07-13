@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <record model="ir.actions.act_window" id="patient_visit_action_window">
+        <field name="name">Visit main window</field>
+        <field name="res_model">hospital.patient.visit</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
