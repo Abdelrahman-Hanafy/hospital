@@ -26,9 +26,24 @@
         </field>
     </record>
 
+    <!-- calendar view -->
+    <record model="ir.ui.view" id="patient_visit_calendar_view">
+        <field name="name">patient_visit_calendar_view</field>
+        <field name="model">hospital.patient.visit</field>
+        <field name="arch" type="xml">
+            <calendar color="visit_type" mode="week" quick_create="False" date_start="start_time" >
+                <field name="name" />
+                <field name="patient_id" />
+                <field name="department_id" />
+                <field name="doctor_id" />
+                <field name="end_time" />
+            </calendar>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="patient_visit_action_window">
         <field name="name">Visit main window</field>
         <field name="res_model">hospital.patient.visit</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">calendar,tree,form</field>
     </record>
 </odoo>
