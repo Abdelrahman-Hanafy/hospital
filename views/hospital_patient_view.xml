@@ -12,6 +12,7 @@
                 </group>
                 <group>
                     <field name="hasGuarantor"/>
+                    <field name="guarantor_id" invisible="not hasGuarantor"/>
                 </group>
 
                 <notebook>
@@ -63,5 +64,12 @@
         <field name="view_mode">form</field>
         <field name="view_id" ref="hospital_patient_form"/>
         <field name="act_window_id" ref="patient_action_window"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="guarantor_action_window">
+        <field name="name">guarantor main window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain"> [('is_company', '=', true)] </field>
     </record>
 </odoo>

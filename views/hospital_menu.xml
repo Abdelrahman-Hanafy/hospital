@@ -13,5 +13,6 @@
     <menuitem name="Administration" id="hospital_administration_menu" parent="hospital.menu_root" sequence='20'/>
     <menuitem name="Doctor" id="hospital_doctor_menu" parent="hospital.hospital_administration_menu" action="doctor_action_window"/>
     <menuitem name="Departments" id="department_menu" parent="hospital.hospital_administration_menu" action="hr.hr_department_kanban_action"/>
+    <menuitem name="Guarantors" id="guarantor_menu" parent="hospital.hospital_administration_menu" action="guarantor_action_window"/>
 
 </odoo>
