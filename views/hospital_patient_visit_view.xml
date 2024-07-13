@@ -8,7 +8,14 @@
         <field name="model">hospital.patient.visit</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_create_invoice" string="Pay" type="object" class="oe_highlight"/>
+                </header>
                 <sheet>
+                    <div name="button_box" position="inside">
+                        <button class="oe_stat_button" string="Invoices" 
+                            type="object" icon="fa-file-text" name="action_view_invoice"/>
+                    </div>
                     <group>
                         <field name="name" />
                         <field name="visit_type" />
