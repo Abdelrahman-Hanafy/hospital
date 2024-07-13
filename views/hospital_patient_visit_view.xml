@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <odoo>
+
+    <!-- form view -->
+    <record model="ir.ui.view" id="patient_visit_form_view">
+        <field name="name">patient_visit_form_view</field>
+        <field name="model">hospital.patient.visit</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="visit_type" />
+
+                        <field name="patient_id" />
+                        <field name="department_id" />
+                        <field name="doctor_id" domain="[('employee_department_id', '=', department_id), ('isDoctor', '=', True)]" />
+
+                        <field name="start_time" />
+                        <field name="end_time" />
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="patient_visit_action_window">
         <field name="name">Visit main window</field>
         <field name="res_model">hospital.patient.visit</field>

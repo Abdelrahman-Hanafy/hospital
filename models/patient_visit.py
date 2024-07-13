@@ -9,7 +9,10 @@ class PatientVisit(models.Model):
     start_time = fields.Datetime(string='Start Time', required=True)
     end_time = fields.Datetime(string='End Time')
     patient_id = fields.Many2one('res.partner', string='Patient', domain=[('isPatient', '=', True)])
-    doctor_id = fields.Many2one('res.users', string='Doctor', domain=[('isDoctor', '=', True)])
+
+    department_id = fields.Many2one("hr.department", string="Department")
+    doctor_id = fields.Many2one('res.users', string='Doctor', domain= [('isDoctor', '=', True)])
+    
     visit_type = fields.Selection([('inpatient', 'Inpatient'), ('outpatient', 'Outpatient'), ('reserve', 'Reserve')], string="Patient Type")
 
     @api.model
