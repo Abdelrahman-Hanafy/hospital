@@ -10,5 +10,6 @@
     <menuitem name="Admission" id="hospital_admission_menu" parent="hospital.menu_root" action="patient_action_window"/>
     <menuitem name="Doctor" id="hospital_doctor_menu" parent="hospital.menu_root" action="doctor_action_window"/>
     <!-- <menuitem name="Requests" id="guarantor_request_menu" parent="hospital.menu_root" action="guarantor_request_action_window"/> -->
+    <menuitem name="Departments" id="department_menu" parent="hospital.menu_root" action="hr.hr_department_kanban_action"/>
 
 </odoo>
